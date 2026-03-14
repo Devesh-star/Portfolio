@@ -16,11 +16,11 @@ const About = () => {
             Hi, I am
           </h1>
 
-          <h2 className="text-4xl sm:text-6xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-5xl font-bold text-white mb-4">
             Devesh Malik
           </h2>
 
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-[#8245ec]">
+          <h3 className="text-xl sm:text-xl md:text-2xl font-semibold text-[#8245ec]">
             <span className="text-white mr-2">I am a</span>
               <Typewriter
                 words={[
@@ -59,7 +59,7 @@ const About = () => {
         </div>
         <div className='md:w-1/2 flex justify-center md:justify-end'>
         <Tilt
-        className='w-48 h-48 sm:w-64 sm:h-64 md:w-[30rem] md:h-[30rem] rounded-full border-4 border-purple-700'
+        className='w-40 h-40 sm:w-56 sm:h-56 md:w-[25rem] md:h-[25rem] rounded-full border-4 border-purple-700'
         tiltMaxAngleX={20}
         tiltMaxAngleY={20}
         perspective={1000}
