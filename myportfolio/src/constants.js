@@ -24,6 +24,9 @@ import vercelLogo from './assets/vercel.png';
 import webverseLogo from './assets/webverse_logo.png';
 import agcLogo from './assets/agc_logo.png';
 import newtonschoolLogo from './assets/newtonschool_logo.png';
+import nextLogo from './assets/next_logo.png'
+import chromaLogo from './assets/chroma_logo.png'
+import dockerLogo from './assets/docker_logo.png'
 
 import glaLogo from './assets/gla_logo.png';
 import bsaLogo from './assets/bsa_logo.png';
@@ -55,6 +58,7 @@ export const SkillsInfo = [
       { name: 'React JS', logo: reactjsLogo },
       { name: 'Tailwind CSS', logo: tailwindcssLogo },
       { name: 'Bootstrap', logo: bootstrapLogo },
+      { name: 'Next.js', logo: nextLogo }
     ],
   },
   {
@@ -63,6 +67,8 @@ export const SkillsInfo = [
       { name: 'Node JS', logo: nodejsLogo },
       { name: 'Express JS', logo: expressjsLogo },
       { name: 'MongoDB', logo: mongodbLogo },
+      { name: 'Fast API', logo: mongodbLogo }
+      { name: 'Chroma DB', logo: chromaLogo }
     ],
   },
   {
@@ -85,6 +91,7 @@ export const SkillsInfo = [
       { name: 'Compass', logo: mcLogo },
       { name: 'Vercel', logo: vercelLogo },
       { name: 'Netlify', logo: netlifyLogo },
+      { name: 'Docker', logo: dockerLogo }
     ],
   },
 ];
@@ -204,6 +211,16 @@ export const SkillsInfo = [
       image: simonGame,
       tags: ["HTML", "CSS", "JavaScript"],
       github: "https://github.com/Devesh-star/Simon-Game",
+      webapp: "https://simon-game-teal-one.vercel.app/",
+    }
+    {
+      id: 3,
+      title: "Github Debugger",
+      description:
+        "I built an AI-powered debugging platform that allows users to import GitHub repositories and analyze their codebase intelligently. The system leverages advanced language models to identify bugs, explain issues, and suggest fixes in context, significantly reducing debugging time. It provides a streamlined workflow for developers by combining repository-level understanding with interactive AI assistance, making it easier to navigate complex code and resolve errors efficiently.",
+      image: simonGame,
+      tags: ["Next.js", "TypeScript", "Node.js","Express.js","Python","Fast API","LongChain","ChromaDB","MongoDB","Docker","Github API","OpenAI API"],
+      github: "https://github.com/Devesh-star/Ai-debugger",
       webapp: "https://simon-game-teal-one.vercel.app/",
     }
   ];  
