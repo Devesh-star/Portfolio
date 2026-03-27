@@ -67,7 +67,7 @@ export const SkillsInfo = [
       { name: 'Node JS', logo: nodejsLogo },
       { name: 'Express JS', logo: expressjsLogo },
       { name: 'MongoDB', logo: mongodbLogo },
-      { name: 'Fast API', logo: mongodbLogo }
+      { name: 'Fast API', logo: mongodbLogo },
       { name: 'Chroma DB', logo: chromaLogo }
     ],
   },
