@@ -27,6 +27,7 @@ import newtonschoolLogo from './assets/newtonschool_logo.png';
 import nextLogo from './assets/next_logo.png'
 import chromaLogo from './assets/chroma_logo.png'
 import dockerLogo from './assets/docker_logo.png'
+import fastLogo from './assets/fast_api.png'
 
 import glaLogo from './assets/gla_logo.png';
 import bsaLogo from './assets/bsa_logo.png';
@@ -36,6 +37,7 @@ import srmlogo from './assets/srmlogo.webp';
 import resumeBuilder from'./assets/resumeBuilder.png';
 import expenseTracker from'./assets/expenseTracker.png';
 import simonGame from'./assets/simonGame.png';
+import aiDebugger from'./assets/ai_debugger.png';
 
 import githubdetLogo from './assets/github_det.png';
 import csprepLogo from './assets/cs_prep.png';
@@ -67,7 +69,7 @@ export const SkillsInfo = [
       { name: 'Node JS', logo: nodejsLogo },
       { name: 'Express JS', logo: expressjsLogo },
       { name: 'MongoDB', logo: mongodbLogo },
-      { name: 'Fast API', logo: mongodbLogo },
+      { name: 'Fast API', logo: fastLogo },
       { name: 'Chroma DB', logo: chromaLogo }
     ],
   },
@@ -218,7 +220,7 @@ export const SkillsInfo = [
       title: "Github Debugger",
       description:
         "I built an AI-powered debugging platform that allows users to import GitHub repositories and analyze their codebase intelligently. The system leverages advanced language models to identify bugs, explain issues, and suggest fixes in context, significantly reducing debugging time. It provides a streamlined workflow for developers by combining repository-level understanding with interactive AI assistance, making it easier to navigate complex code and resolve errors efficiently.",
-      image: simonGame,
+      image: aiDebugger,
       tags: ["Next.js", "TypeScript", "Node.js","Express.js","Python","Fast API","LongChain","ChromaDB","MongoDB","Docker","Github API","OpenAI API"],
       github: "https://github.com/Devesh-star/Ai-debugger",
       webapp: "https://simon-game-teal-one.vercel.app/",
