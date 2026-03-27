@@ -212,7 +212,7 @@ export const SkillsInfo = [
       tags: ["HTML", "CSS", "JavaScript"],
       github: "https://github.com/Devesh-star/Simon-Game",
       webapp: "https://simon-game-teal-one.vercel.app/",
-    }
+    },
     {
       id: 3,
       title: "Github Debugger",
