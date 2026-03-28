@@ -36,7 +36,7 @@ const Footer = () => {
           {[
             { icon: <FaTwitter />, link: "https://x.com/deveshmalik_69" },
             { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/devesh-malik-11b633384/" },
-            { icon: <FaInstagram />, link: "https://www.instagram.com/deveshx__/" },
+            { icon: <FaInstagram />, link: "https://www.instagram.com/dev._.eshh/" },
             
           ].map((item, index) => (
             <a
