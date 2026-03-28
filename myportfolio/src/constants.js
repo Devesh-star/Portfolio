@@ -194,7 +194,7 @@ export const SkillsInfo = [
       image: expenseTracker,
       tags: ["HTML", "CSS", "JavaScript"],
       github: "https://github.com/Devesh-star/Expense-Manager",
-      webapp: "https://githubprofiledetective.netlify.app/",
+      webapp: "/",
     },
     {
       id: 1,
@@ -235,5 +235,15 @@ export const SkillsInfo = [
       tags: ["Next.js", "TypeScript", "Node.js","Express.js","MongoDB"],
       github: "https://github.com/Devesh-star/Quickticket",
       webapp: "https://quickticket-bpqj.vercel.app/",
+    },
+    {
+      id: 5,
+      title: "Interactive Survey Form",
+      description:
+        "Developed an interactive survey form using HTML, CSS, and JavaScript, focused on clean UI design and seamless user experience. The project features responsive layout, real-time input validation, and dynamic form handling to ensure accurate data collection. Emphasis was placed on accessibility, usability, and structured code organization, demonstrating strong front-end development fundamentals.",
+      image: quickticket,
+      tags: ["HTML", "CSS", "Javascript"],
+      github: "https://github.com/Devesh-star/interactive-survey-form",
+      webapp: "/",
     }
   ];  
