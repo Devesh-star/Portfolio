@@ -76,7 +76,7 @@ export const SkillsInfo = [
       { name: 'MongoDB', logo: mongodbLogo },
       { name: 'Fast API', logo: fastLogo },
       { name: 'Chroma DB', logo: chromaLogo },
-      { name: 'SQL', logo: chromaLogo }
+      { name: 'SQL', logo: sql }
     ],
   },
   {
@@ -87,7 +87,7 @@ export const SkillsInfo = [
       { name: 'Java', logo: javaLogo },
       { name: 'Python', logo: pythonLogo },
       { name: 'JavaScript', logo: javascriptLogo },
-      { name: 'TypeScript', logo: sqlLogo }
+      { name: 'TypeScript', logo: typescriptLogo }
     ],
   },
   {
