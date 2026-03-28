@@ -39,6 +39,7 @@ import expenseTracker from'./assets/expenseTracker.png';
 import simonGame from'./assets/simonGame.png';
 import aiDebugger from'./assets/ai_debugger.png';
 import quickticket from'./assets/quickticket.jpeg';
+import surveyform from'./assets/survey_form.png';
 
 import githubdetLogo from './assets/github_det.png';
 import csprepLogo from './assets/cs_prep.png';
@@ -241,7 +242,7 @@ export const SkillsInfo = [
       title: "Interactive Survey Form",
       description:
         "Developed an interactive survey form using HTML, CSS, and JavaScript, focused on clean UI design and seamless user experience. The project features responsive layout, real-time input validation, and dynamic form handling to ensure accurate data collection. Emphasis was placed on accessibility, usability, and structured code organization, demonstrating strong front-end development fundamentals.",
-      image: quickticket,
+      image: surveyform,
       tags: ["HTML", "CSS", "Javascript"],
       github: "https://github.com/Devesh-star/interactive-survey-form",
       webapp: "/",
