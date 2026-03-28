@@ -192,14 +192,14 @@ export const SkillsInfo = [
   
   export const projects = [
     {
-      id: 3,
-      title: "Expense Tracker",
+      id: 0,
+      title: "Github Debugger",
       description:
-        "Built a client-side expense management web application using HTML, CSS, and vanilla JavaScript. Implemented DOM manipulation and event handling to add and remove transactions while dynamically calculating total balance, income, and expenses. Focused on clean UI design and efficient data handling for smooth user interaction.",
-      image: expenseTracker,
-      tags: ["HTML", "CSS", "JavaScript"],
-      github: "https://github.com/Devesh-star/Expense-Manager",
-      webapp: "/",
+        "I built an AI-powered debugging platform that allows users to import GitHub repositories and analyze their codebase intelligently. The system leverages advanced language models to identify bugs, explain issues, and suggest fixes in context, significantly reducing debugging time. It provides a streamlined workflow for developers by combining repository-level understanding with interactive AI assistance, making it easier to navigate complex code and resolve errors efficiently.",
+      image: aiDebugger,
+      tags: ["Next.js", "TypeScript", "Node.js","Express.js","Python","Fast API","LongChain","ChromaDB","MongoDB","Docker","Github API","OpenAI API"],
+      github: "https://github.com/Devesh-star/Ai-debugger",
+      webapp: "https://simon-game-teal-one.vercel.app/",
     },
     {
       id: 1,
@@ -212,26 +212,6 @@ export const SkillsInfo = [
       webapp: "https://resume-builder-ten-ashen.vercel.app/",
     },
     {
-      id: 4,
-      title: "Simon Game",
-      description:
-        "Implemented a digital version of the Simon memory game using HTML, CSS, and JavaScript. Built the core game logic including random sequence generation, user input validation, and progressive difficulty levels. Leveraged event listeners and DOM manipulation to provide real-time feedback through animations and sound effects.",
-      image: simonGame,
-      tags: ["HTML", "CSS", "JavaScript"],
-      github: "https://github.com/Devesh-star/Simon-Game",
-      webapp: "https://simon-game-teal-one.vercel.app/",
-    },
-    {
-      id: 0,
-      title: "Github Debugger",
-      description:
-        "I built an AI-powered debugging platform that allows users to import GitHub repositories and analyze their codebase intelligently. The system leverages advanced language models to identify bugs, explain issues, and suggest fixes in context, significantly reducing debugging time. It provides a streamlined workflow for developers by combining repository-level understanding with interactive AI assistance, making it easier to navigate complex code and resolve errors efficiently.",
-      image: aiDebugger,
-      tags: ["Next.js", "TypeScript", "Node.js","Express.js","Python","Fast API","LongChain","ChromaDB","MongoDB","Docker","Github API","OpenAI API"],
-      github: "https://github.com/Devesh-star/Ai-debugger",
-      webapp: "https://simon-game-teal-one.vercel.app/",
-    },
-    {
       id: 2,
       title: "Quickticket",
       description:
@@ -240,6 +220,26 @@ export const SkillsInfo = [
       tags: ["Next.js", "TypeScript", "Node.js","Express.js","MongoDB"],
       github: "https://github.com/Devesh-star/Quickticket",
       webapp: "https://quickticket-bpqj.vercel.app/",
+    },
+    {
+      id: 3,
+      title: "Expense Tracker",
+      description:
+        "Built a client-side expense management web application using HTML, CSS, and vanilla JavaScript. Implemented DOM manipulation and event handling to add and remove transactions while dynamically calculating total balance, income, and expenses. Focused on clean UI design and efficient data handling for smooth user interaction.",
+      image: expenseTracker,
+      tags: ["HTML", "CSS", "JavaScript"],
+      github: "https://github.com/Devesh-star/Expense-Manager",
+      webapp: "/",
+    },
+    {
+      id: 4,
+      title: "Simon Game",
+      description:
+        "Implemented a digital version of the Simon memory game using HTML, CSS, and JavaScript. Built the core game logic including random sequence generation, user input validation, and progressive difficulty levels. Leveraged event listeners and DOM manipulation to provide real-time feedback through animations and sound effects.",
+      image: simonGame,
+      tags: ["HTML", "CSS", "JavaScript"],
+      github: "https://github.com/Devesh-star/Simon-Game",
+      webapp: "https://simon-game-teal-one.vercel.app/",
     },
     {
       id: 5,
