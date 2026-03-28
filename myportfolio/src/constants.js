@@ -38,6 +38,7 @@ import resumeBuilder from'./assets/resumeBuilder.png';
 import expenseTracker from'./assets/expenseTracker.png';
 import simonGame from'./assets/simonGame.png';
 import aiDebugger from'./assets/ai_debugger.png';
+import quickticket from'./assets/quickticket.jpeg';
 
 import githubdetLogo from './assets/github_det.png';
 import csprepLogo from './assets/cs_prep.png';
@@ -224,5 +225,15 @@ export const SkillsInfo = [
       tags: ["Next.js", "TypeScript", "Node.js","Express.js","Python","Fast API","LongChain","ChromaDB","MongoDB","Docker","Github API","OpenAI API"],
       github: "https://github.com/Devesh-star/Ai-debugger",
       webapp: "https://simon-game-teal-one.vercel.app/",
+    },
+    {
+      id: 4,
+      title: "Quickticket",
+      description:
+        "QuickTicket is a full-stack ticket booking platform I built using Next.js, designed to streamline travel planning across trains, buses, and flights in a single interface. The application focuses on performance and user experience, featuring fast page loads, dynamic routing, and responsive design. It integrates real-time search and booking flows, allowing users to compare options and make reservations efficiently. This project demonstrates my ability to build scalable, modern web applications with clean architecture and seamless user interaction.",
+      image: quickticket,
+      tags: ["Next.js", "TypeScript", "Node.js","Express.js","MongoDB"],
+      github: "https://github.com/Devesh-star/Quickticket",
+      webapp: "https://quickticket-bpqj.vercel.app/",
     }
   ];  
