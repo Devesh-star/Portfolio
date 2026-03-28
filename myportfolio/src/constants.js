@@ -76,7 +76,7 @@ export const SkillsInfo = [
       { name: 'MongoDB', logo: mongodbLogo },
       { name: 'Fast API', logo: fastLogo },
       { name: 'Chroma DB', logo: chromaLogo },
-      { name: 'SQL', logo: sql }
+      { name: 'SQL', logo: sqlLogo }
     ],
   },
   {
