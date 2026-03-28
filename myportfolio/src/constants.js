@@ -28,6 +28,8 @@ import nextLogo from './assets/next_logo.png'
 import chromaLogo from './assets/chroma_logo.png'
 import dockerLogo from './assets/docker_logo.png'
 import fastLogo from './assets/fast_api.png'
+import typescriptLogo from './assets/Typescript_Logo.png'
+import sqlLogo from './assets/sql.png'
 
 import glaLogo from './assets/gla_logo.png';
 import bsaLogo from './assets/bsa_logo.png';
@@ -62,7 +64,8 @@ export const SkillsInfo = [
       { name: 'React JS', logo: reactjsLogo },
       { name: 'Tailwind CSS', logo: tailwindcssLogo },
       { name: 'Bootstrap', logo: bootstrapLogo },
-      { name: 'Next.js', logo: nextLogo }
+      { name: 'Next.js', logo: nextLogo },
+      { name: 'TypeScript', logo: typescriptLogo }
     ],
   },
   {
@@ -72,7 +75,8 @@ export const SkillsInfo = [
       { name: 'Express JS', logo: expressjsLogo },
       { name: 'MongoDB', logo: mongodbLogo },
       { name: 'Fast API', logo: fastLogo },
-      { name: 'Chroma DB', logo: chromaLogo }
+      { name: 'Chroma DB', logo: chromaLogo },
+      { name: 'SQL', logo: chromaLogo }
     ],
   },
   {
@@ -83,6 +87,7 @@ export const SkillsInfo = [
       { name: 'Java', logo: javaLogo },
       { name: 'Python', logo: pythonLogo },
       { name: 'JavaScript', logo: javascriptLogo },
+      { name: 'TypeScript', logo: sqlLogo }
     ],
   },
   {
@@ -90,7 +95,6 @@ export const SkillsInfo = [
     skills: [
       { name: 'Git', logo: gitLogo },
       { name: 'GitHub', logo: githubLogo },
-      { name: 'VS Code', logo: vscodeLogo },
       { name: 'Postman', logo: postmanLogo },
       { name: 'Compass', logo: mcLogo },
       { name: 'Vercel', logo: vercelLogo },
