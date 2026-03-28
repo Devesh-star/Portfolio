@@ -28,7 +28,7 @@ import nextLogo from './assets/next_logo.png'
 import chromaLogo from './assets/chroma_logo.png'
 import dockerLogo from './assets/docker_logo.png'
 import fastLogo from './assets/fast_api.png'
-import typescriptLogo from './assets/Typescript_Logo.png'
+import typescriptLogo from './assets/Typescript_logo.png'
 import sqlLogo from './assets/sql.png'
 
 import glaLogo from './assets/gla_logo.png';
