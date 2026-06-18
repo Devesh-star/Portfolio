@@ -23,7 +23,7 @@ const CosmicBackground = () => {
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 10, 10]} intensity={1} color="#8245ec" />
           <pointLight position={[-10, -10, -10]} intensity={0.5} color="#3b82f6" />
-          <Stars radius={50} depth={50} count={1500} factor={4} saturation={0} fade speed={1} />
+          <Stars radius={50} depth={50} count={300} factor={4} saturation={0} fade speed={1} />
         </Canvas>
       </div>
     </div>
