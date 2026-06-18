@@ -281,3 +281,25 @@
     font-size: 0.7rem;
   }
 }
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hologram-profile-container {
+    width: 100%;
+    max-width: 250px;
+    height: 300px;
+  }
+  .hero-roles {
+    font-size: 1.1rem;
+  }
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+  .btn-primary, .btn-secondary {
+    width: 100%;
+  }
+}

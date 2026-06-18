@@ -283,10 +283,11 @@
   /* On mobile, stack them into a vertical rocket array */
   .starship-container {
     aspect-ratio: auto;
-    height: 1000px;
+    height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 40px;
+    padding: 0 20px;
   }
 
   .svg-layer {
@@ -320,5 +321,16 @@
 
   .telemetry {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-hologram {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .hologram-grid {
+    grid-template-columns: 1fr;
   }
 }

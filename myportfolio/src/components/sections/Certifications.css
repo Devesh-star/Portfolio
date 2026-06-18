@@ -201,8 +201,16 @@
 }
 
 @media (max-width: 768px) {
+  .constellation-header {
+    position: relative;
+    top: 0;
+    margin-bottom: 40px;
+  }
+  .constellation-header h2 {
+    font-size: 2.2rem;
+  }
   .sky-map {
-    height: 800px;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -216,6 +224,10 @@
     transform: none;
     top: auto !important;
     left: auto !important;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .star-info {
     position: relative;
@@ -226,5 +238,25 @@
     visibility: visible;
     transform: none;
     margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .constellation-header h2 {
+    font-size: 1.8rem;
+  }
+  .star-info {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+  }
+  .star-title {
+    font-size: 1rem;
+  }
+  .sky-map {
+    padding: 0 10px;
   }
 }

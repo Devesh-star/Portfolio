@@ -199,6 +199,9 @@
 }
 
 @media (max-width: 768px) {
+  .supernova-header h2 {
+    font-size: 2.5rem;
+  }
   .cosmic-path-container {
     left: 40px;
   }
@@ -219,5 +222,27 @@
   .supernova-node.left .milestone-date {
     right: auto;
     left: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .supernova-header h2 {
+    font-size: 1.8rem;
+  }
+  .cosmic-path-container {
+    left: 20px;
+  }
+  .supernova-node.left, .supernova-node.right {
+    padding-left: 50px;
+  }
+  .supernova-core {
+    left: 20px;
+  }
+  .supernova-node.left .milestone-date,
+  .supernova-node.right .milestone-date {
+    left: 10px;
+  }
+  .supernova-content {
+    padding: 20px;
   }
 }

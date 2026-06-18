@@ -223,3 +223,21 @@ textarea.console-input {
   .sat-github { left: 15%; }
   .sat-email { left: 85%; }
 }
+
+@media (max-width: 480px) {
+  .cosmic-map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .satellite-link {
+    position: relative;
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+  }
+  .console-header h2 {
+    font-size: 2rem;
+  }
+}

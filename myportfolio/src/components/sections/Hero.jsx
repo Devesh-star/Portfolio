@@ -1,10 +1,18 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
 import profilePic from '../../assets/Profile_pic.png';
 import './Hero.css';
 
 const Hero = () => {
   const containerRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   
   // Scroll parallax for left side
   const { scrollYProgress } = useScroll({
@@ -69,7 +77,7 @@ const Hero = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          style={{ y: y1, opacity }}
+          style={{ y: isMobile ? 0 : y1, opacity }}
         >
           <motion.span variants={itemVariants} className="hero-greeting">
             HELLO, I'M DEVESH MALIK
@@ -113,7 +121,7 @@ const Hero = () => {
         {/* Right Side: Holographic Profile Frame */}
         <motion.div
           className="hero-right"
-          style={{ y: y2, opacity, perspective: 1000 }}
+          style={{ y: isMobile ? 0 : y2, opacity, perspective: 1000 }}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}

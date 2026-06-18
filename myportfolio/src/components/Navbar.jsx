@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'framer-motion';
 import './Navbar.css';
 
 const Navbar = () => {
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Compress navbar on scroll
   const navWidthRaw = useTransform(scrollY, [0, 100], ['100%', '85%']);
@@ -24,6 +25,7 @@ const Navbar = () => {
 
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
+    setIsMobileMenuOpen(false);
     const target = document.getElementById(targetId);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
@@ -57,7 +59,37 @@ const Navbar = () => {
           <div className="status-indicator"></div>
           <span>Systems Online</span>
         </div>
+
+        <button 
+          className={`mobile-menu-toggle ${isMobileMenuOpen ? 'open' : ''}`}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </nav>
+
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div 
+            className="mobile-menu-overlay glass-panel"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="mobile-nav-links">
+              <a href="#about" onClick={(e) => handleNavClick(e, 'about')}>About Intel</a>
+              <a href="#skills" onClick={(e) => handleNavClick(e, 'skills')}>Skill Systems</a>
+              <a href="#certifications" onClick={(e) => handleNavClick(e, 'certifications')}>Certifications</a>
+              <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')}>Project Archives</a>
+              <a href="#education" onClick={(e) => handleNavClick(e, 'education')}>Timeline</a>
+              <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact Comms</a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 };
