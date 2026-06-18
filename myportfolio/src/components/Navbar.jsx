@@ -41,7 +41,7 @@ const Navbar = () => {
     >
       <nav className={`navbar glass-panel ${isScrolled ? 'scrolled glow-border' : ''}`}>
         <div className="nav-brand">
-          <span className="brand-text" data-cursor-text="HOME">MISSION CONTROL</span>
+          <span className="brand-text" data-cursor-text="HOME">DM</span>
         </div>
         
         <div className="nav-links">
