@@ -65,7 +65,8 @@
     inset -30px -30px 50px rgba(0, 0, 0, 0.9),
     inset 10px 10px 30px rgba(255, 255, 255, 0.2),
     0 0 50px rgba(var(--planet-color-rgb), 0.3);
-  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  will-change: transform;
   z-index: 5;
   cursor: pointer;
 }
@@ -113,10 +114,7 @@
 
 .project-planet-container:hover .project-planet {
   transform: scale(1.05);
-  box-shadow: 
-    inset -20px -20px 40px rgba(0, 0, 0, 0.8),
-    inset 10px 10px 20px rgba(255, 255, 255, 0.3),
-    0 0 100px rgba(var(--planet-color-rgb), 0.6);
+  /* box-shadow animation removed for performance */
 }
 
 .project-planet-container:hover .project-planet img {

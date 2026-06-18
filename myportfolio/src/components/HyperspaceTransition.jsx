@@ -41,7 +41,7 @@ const HyperspaceTransition = () => {
         >
           {/* Warp lines shooting from center */}
           <div className="warp-core">
-             {[...Array(80)].map((_, i) => (
+             {[...Array(20)].map((_, i) => (
                <div key={i} className="star-streak" style={{
                  '--angle': `${Math.random() * 360}deg`,
                  '--speed': `${0.3 + Math.random() * 0.4}s`,
