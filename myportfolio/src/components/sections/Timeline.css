@@ -121,8 +121,8 @@
   position: relative;
   width: calc(100% - 60px);
   max-width: 400px;
-  background: rgba(10, 10, 25, 0.7);
-  backdrop-filter: blur(10px);
+  background: rgba(10, 10, 25, 0.85);
+  /* backdrop-filter: blur(10px); Removed for performance */
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   padding: 30px;

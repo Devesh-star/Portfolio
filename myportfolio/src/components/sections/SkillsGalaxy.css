@@ -51,7 +51,7 @@
   fill: rgba(10, 10, 25, 0.6);
   stroke: rgba(0, 229, 255, 0.4);
   stroke-width: 2;
-  backdrop-filter: blur(5px);
+  /* backdrop-filter: blur(5px); Removed for performance */
 }
 
 .structural-grid {
@@ -165,7 +165,7 @@
   border: 1px solid rgba(0, 229, 255, 0.3);
   padding: 8px 15px;
   border-radius: 4px;
-  backdrop-filter: blur(4px);
+  /* backdrop-filter: blur(4px); Removed for performance */
   transition: all 0.3s;
 }
 
@@ -199,7 +199,7 @@
   border-radius: 8px;
   padding: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 229, 255, 0.1);
-  backdrop-filter: blur(10px);
+  /* backdrop-filter: blur(10px); Removed for performance */
   width: max-content;
   max-width: 250px;
 }

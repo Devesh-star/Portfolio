@@ -155,8 +155,8 @@
   position: relative;
   border-radius: 16px;
   overflow: hidden;
-  background: rgba(10, 10, 25, 0.4);
-  backdrop-filter: blur(8px);
+  background: rgba(10, 10, 25, 0.85);
+  /* backdrop-filter: blur(8px); Removed for performance */
   border: 1px solid rgba(0, 229, 255, 0.3);
   box-shadow: 0 0 30px rgba(0, 229, 255, 0.1), inset 0 0 20px rgba(0, 229, 255, 0.05);
   transform: translateZ(20px);
@@ -217,8 +217,8 @@
 /* Floating Telemetry Badges */
 .floating-badge {
   position: absolute;
-  background: rgba(10, 10, 20, 0.8);
-  backdrop-filter: blur(4px);
+  background: rgba(10, 10, 20, 0.95);
+  /* backdrop-filter: blur(4px); Removed for performance */
   border: 1px solid rgba(0, 229, 255, 0.4);
   padding: 6px 12px;
   border-radius: 4px;
