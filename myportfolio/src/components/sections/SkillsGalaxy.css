@@ -1,0 +1,324 @@
+/* --- STARSHIP BLUEPRINT --- */
+
+.starship-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 100px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 10;
+  background-color: transparent;
+}
+
+/* Blueprint Grid Background */
+.blueprint-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: 
+    linear-gradient(rgba(0, 229, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.starship-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+}
+
+/* --- SVG LAYER --- */
+.svg-layer {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.svg-layer svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.3));
+}
+
+.hull-path {
+  fill: rgba(10, 10, 25, 0.6);
+  stroke: rgba(0, 229, 255, 0.4);
+  stroke-width: 2;
+  backdrop-filter: blur(5px);
+}
+
+.structural-grid {
+  fill: none;
+  stroke: rgba(0, 229, 255, 0.15);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+}
+
+.connector-line {
+  fill: none;
+  stroke: rgba(0, 229, 255, 0.2);
+  stroke-width: 2;
+  transition: all 0.4s ease;
+}
+
+.connector-line.active {
+  stroke: rgba(138, 43, 226, 0.8);
+  stroke-width: 4;
+  filter: drop-shadow(0 0 8px rgba(138, 43, 226, 0.6));
+}
+
+/* --- CORE REACTOR --- */
+.core-reactor {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.core-pulse {
+  width: 80px; height: 80px;
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.4) 0%, transparent 70%);
+  border: 2px solid rgba(0, 229, 255, 0.5);
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(138, 43, 226, 0.5), inset 0 0 20px rgba(0, 229, 255, 0.5);
+  animation: reactorPulse 4s infinite alternate ease-in-out;
+  position: relative;
+}
+
+.core-pulse::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px; height: 30px;
+  background: #00E5FF;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #00E5FF;
+}
+
+@keyframes reactorPulse {
+  0% { transform: scale(0.95); opacity: 0.8; filter: hue-rotate(0deg); }
+  100% { transform: scale(1.05); opacity: 1; filter: hue-rotate(30deg); }
+}
+
+.core-label {
+  margin-top: 15px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: #fff;
+  letter-spacing: 0.2em;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- SYSTEM MODULES --- */
+.system-module {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s ease;
+  cursor: crosshair;
+}
+
+/* Positioning based on the 1000x1000 SVG */
+.system-module.pos-top { top: 18%; left: 50%; transform: translate(-50%, -50%); }
+.system-module.pos-bottom { top: 82%; left: 50%; transform: translate(-50%, -50%); }
+.system-module.pos-left { top: 50%; left: 18%; transform: translate(-50%, -50%); }
+.system-module.pos-right { top: 50%; left: 82%; transform: translate(-50%, -50%); }
+
+.module-anchor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.anchor-point {
+  width: 12px; height: 12px;
+  background: #00E5FF;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00E5FF;
+  transition: all 0.3s;
+}
+
+.anchor-label {
+  text-align: center;
+  background: rgba(10, 10, 20, 0.8);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  padding: 8px 15px;
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s;
+}
+
+.anchor-label h4 {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: #fff;
+  letter-spacing: 0.15em;
+  margin: 0;
+}
+
+.telemetry-id, .telemetry-text {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: #00E5FF;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+}
+
+/* --- HOLOGRAM SKILLS --- */
+.skills-hologram {
+  position: absolute;
+  top: 100%;
+  margin-top: 15px;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: rgba(10, 10, 25, 0.7);
+  border: 1px solid rgba(0, 229, 255, 0.4);
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 229, 255, 0.1);
+  backdrop-filter: blur(10px);
+  width: max-content;
+  max-width: 250px;
+}
+
+/* Adjust dropdown direction for edges */
+.system-module.pos-bottom .skills-hologram {
+  top: auto; bottom: 100%; margin-top: 0; margin-bottom: 15px;
+  transform: translateY(10px);
+}
+.system-module.pos-left .skills-hologram {
+  top: 50%; left: 100%; margin-top: 0; margin-left: 15px;
+  transform: translate(-10px, -50%);
+}
+.system-module.pos-right .skills-hologram {
+  top: 50%; left: auto; right: 100%; margin-top: 0; margin-right: 15px;
+  transform: translate(10px, -50%);
+}
+
+.hologram-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.hologram-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 10px;
+  border-radius: 4px;
+  border-left: 2px solid rgba(138, 43, 226, 0.5);
+}
+
+.hologram-chip img {
+  width: 16px; height: 16px;
+  object-fit: contain;
+}
+
+/* --- HOVER STATES --- */
+.system-module.active .anchor-point {
+  transform: scale(1.5);
+  background: #8A2BE2;
+  box-shadow: 0 0 20px #8A2BE2;
+}
+
+.system-module.active .anchor-label {
+  border-color: #8A2BE2;
+  box-shadow: 0 0 15px rgba(138, 43, 226, 0.3);
+}
+
+.system-module.active .skills-hologram {
+  opacity: 1;
+  transform: translate(0, 0) !important;
+  pointer-events: auto;
+}
+
+/* --- CORNER TELEMETRY --- */
+.telemetry {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: rgba(0, 229, 255, 0.6);
+  line-height: 1.6;
+  pointer-events: none;
+}
+
+.telemetry.top-left { top: 20px; left: 20px; }
+.telemetry.bottom-right { bottom: 20px; right: 20px; text-align: right; }
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 1024px) {
+  .system-module.pos-left { left: 25%; }
+  .system-module.pos-right { left: 75%; }
+}
+
+@media (max-width: 768px) {
+  /* On mobile, stack them into a vertical rocket array */
+  .starship-container {
+    aspect-ratio: auto;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .svg-layer {
+    display: none; /* Hide complex SVG on mobile for cleaner layout */
+  }
+
+  .core-reactor {
+    position: relative;
+    transform: none;
+    top: 0; left: 0;
+    margin: 40px auto;
+  }
+
+  .system-module {
+    position: relative;
+    top: 0 !important; left: 0 !important;
+    transform: none !important;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .skills-hologram {
+    position: relative;
+    top: 0 !important; left: 0 !important; right: auto !important; bottom: auto !important;
+    margin: 15px auto 0 !important;
+    transform: none !important;
+    opacity: 1; /* Always visible on mobile */
+    pointer-events: auto;
+    max-width: 90%;
+  }
+
+  .telemetry {
+    display: none;
+  }
+}

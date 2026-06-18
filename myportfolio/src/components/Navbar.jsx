@@ -1,129 +1,64 @@
-import React, { useState, useEffect } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import React, { useState, useEffect } from 'react';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import './Navbar.css';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
+  const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Detect scroll and change navbar background
+  // Compress navbar on scroll
+  const navWidthRaw = useTransform(scrollY, [0, 100], ['100%', '85%']);
+  const navBorderRadiusRaw = useTransform(scrollY, [0, 100], ['0px', '24px']);
+  const navTopRaw = useTransform(scrollY, [0, 100], ['0px', '24px']);
+
+  // Apply spring physics for buttery smooth expansion/compression
+  const navWidth = useSpring(navWidthRaw, { stiffness: 400, damping: 40 });
+  const navBorderRadius = useSpring(navBorderRadiusRaw, { stiffness: 400, damping: 40 });
+  const navTop = useSpring(navTopRaw, { stiffness: 400, damping: 40 });
+
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    return scrollY.onChange((latest) => {
+      setIsScrolled(latest > 50);
+    });
+  }, [scrollY]);
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Smooth scroll function
-  const handleMenuItemClick = (sectionId) => {
-    setActiveSection(sectionId);
-    setIsOpen(false);
-
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+  const handleNavClick = (e, targetId) => {
+    e.preventDefault();
+    const target = document.getElementById(targetId);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  const menuItems = [
-    { id: "about", label: "About" },
-    { id: "skills", label: "Skills" },
-    { id: "certifications", label: "Certifications" },
-    { id: "work", label: "Projects" },
-    { id: "education", label: "Education" },
-  ];
-
   return (
-    <nav
-      className={`fixed top-0 w-full z-50 transition duration-300 px-[7vw] md:px-[7vw] lg:px-[20vw] ${
-        isScrolled ? "bg-[#050414] bg-opacity-50 backdrop-blur-md shadow-md" : "bg-transparent"
-      }`}
+    <motion.div 
+      className="navbar-wrapper"
+      style={{
+        width: navWidth,
+        borderRadius: navBorderRadius,
+        top: navTop,
+      }}
     >
-      <div className="text-white py-5 flex justify-between items-center">
-        {/* Logo */}
-        <div className="text-lg font-semibold cursor-pointer">
-          <span className="text-[#8245ec]">&lt;</span>
-          <span className="text-white">Devesh</span>
-          <span className="text-[#8245ec]">/</span>
-          <span className="text-white">Malik</span>
-          <span className="text-[#8245ec]">&gt;</span>
+      <nav className={`navbar glass-panel ${isScrolled ? 'scrolled glow-border' : ''}`}>
+        <div className="nav-brand">
+          <span className="brand-text" data-cursor-text="HOME">MISSION CONTROL</span>
+        </div>
+        
+        <div className="nav-links">
+          <a href="#about" onClick={(e) => handleNavClick(e, 'about')} data-cursor-text="ABOUT">About Intel</a>
+          <a href="#skills" onClick={(e) => handleNavClick(e, 'skills')} data-cursor-text="SKILLS">Skill Systems</a>
+          <a href="#certifications" onClick={(e) => handleNavClick(e, 'certifications')} data-cursor-text="CERTS">Certifications</a>
+          <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')} data-cursor-text="WORK">Project Archives</a>
+          <a href="#education" onClick={(e) => handleNavClick(e, 'education')} data-cursor-text="EDU">Timeline</a>
+          <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} data-cursor-text="CONTACT">Contact Comms</a>
         </div>
 
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-8 text-gray-300">
-          {menuItems.map((item) => (
-            <li
-              key={item.id}
-              className={`cursor-pointer hover:text-[#8245ec] ${
-                activeSection === item.id ? "text-[#8245ec]" : ""
-              }`}
-            >
-              <button onClick={() => handleMenuItemClick(item.id)}>
-                {item.label}
-              </button>
-            </li>
-          ))}
-        </ul>
-
-        {/* Social Icons */}
-        <div className="hidden md:flex space-x-4">
-          <a
-            href="https://github.com/Devesh-star"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-300 hover:text-[#8245ec]"
-          >
-            <FaGithub size={24} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/devesh-malik-11b633384/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-300 hover:text-[#8245ec]"
-          >
-            <FaLinkedin size={24} />
-          </a>
+        <div className="nav-status">
+          <div className="status-indicator"></div>
+          <span>Systems Online</span>
         </div>
-
-        {/* Mobile Menu Icon */}
-        <div className="md:hidden">
-          {isOpen ? (
-            <FiX
-              className="text-3xl text-[#8245ec] cursor-pointer"
-              onClick={() => setIsOpen(false)}
-            />
-          ) : (
-            <FiMenu
-              className="text-3xl text-[#8245ec] cursor-pointer"
-              onClick={() => setIsOpen(true)}
-            />
-          )}
-        </div>
-      </div>
-
-      {/* Mobile Menu Items */}
-      {isOpen && (
-        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-4/5 bg-[#050414] bg-opacity-50 backdrop-filter backdrop-blur-lg z-50 rounded-lg shadow-lg md:hidden">
-          <ul className="flex flex-col items-center space-y-4 py-4 text-gray-300">
-            {menuItems.map((item) => (
-              <li
-                key={item.id}
-                className={`cursor-pointer hover:text-white ${
-                  activeSection === item.id ? "text-[#8245ec]" : ""
-                }`}
-              >
-                <button onClick={() => handleMenuItemClick(item.id)}>
-                  {item.label}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </nav>
+      </nav>
+    </motion.div>
   );
 };
 

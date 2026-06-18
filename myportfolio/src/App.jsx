@@ -1,38 +1,62 @@
-import React from "react";
-import Navbar from "./components/Navbar";
-import About from "./components/about"
-import Contact from "./components/contact";
-import Education from "./components/Education";
-import Experience from "./components/experience";
-import Footer from "./components/footer";
-import Skills from "./components/skills";
-import Work from "./components/work";
-import BlurBlob from "./BlurBlob";
-
+import React, { useEffect } from 'react';
+import Lenis from 'lenis';
+import CustomCursor from './components/CustomCursor';
+import CosmicBackground from './components/WebGLBackground';
+import Navbar from './components/Navbar';
+import Hero from './components/sections/Hero';
+import About from './components/sections/About';
+import StarshipBlueprint from './components/sections/SkillsGalaxy';
+import Projects from './components/sections/Projects';
+import Timeline from './components/sections/Timeline';
+import Certifications from './components/sections/Certifications';
+import Contact from './components/sections/Contact';
 
 function App() {
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+      infinite: false,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   return (
-    <div className=" bg-[#050414]">
-    <BlurBlob position={{top: "35%", left: "20%"}} size={{width: "30%", height:"40%"}}/>
-      <div
-        className="
-          absolute inset-0 
-          bg-[linear-gradient(to_right,#4f4f4f2e,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e,transparent_1px)]
-          bg-[size:14px_24px]
-          [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%)]
-        "
-      />
-      <div className="relative pt-20">
-        <Navbar/>
-        <About/>
-        <Skills/>
-        <Experience/>
-        <Work/>
-        <Education/>
-        <Contact/>
-        <Footer/>
-      </div>
-    </div>
+    <>
+      <CustomCursor />
+      <CosmicBackground />
+      <Navbar />
+
+      <main style={{ position: 'relative', zIndex: 10 }}>
+        <Hero />
+        <About />
+        <StarshipBlueprint />
+        <Certifications />
+        <Projects />
+        <Timeline />
+        <Contact />
+      </main>
+
+      <footer style={{ textAlign: 'center', padding: '40px', color: 'var(--color-text-tertiary)', fontSize: '0.9rem' }}>
+        <p>© {new Date().getFullYear()} Devesh Malik. The Developer Galaxy Mission.</p>
+      </footer>
+    </>
   );
 }
 

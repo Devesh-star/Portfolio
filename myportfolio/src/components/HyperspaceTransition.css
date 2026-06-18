@@ -1,0 +1,67 @@
+.hyperspace-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background-color: var(--color-space-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  pointer-events: all;
+}
+
+.warp-core {
+  position: relative;
+  width: 0;
+  height: 0;
+  z-index: 10000;
+}
+
+.star-streak {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), #00E5FF, #fff);
+  transform-origin: 0 0;
+  transform: rotate(var(--angle)) translateY(50px);
+  opacity: 0;
+  animation: warpStreak var(--speed) var(--delay) cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+@keyframes warpStreak {
+  0% {
+    transform: rotate(var(--angle)) translateY(20px) scaleY(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(var(--angle)) translateY(1500px) scaleY(15);
+    opacity: 0;
+  }
+}
+
+.warp-flash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  opacity: 0;
+  z-index: 10001;
+  animation: warpFlash 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes warpFlash {
+  0% { opacity: 0; }
+  30% { opacity: 0; }
+  45% { opacity: 1; }
+  100% { opacity: 0; }
+}

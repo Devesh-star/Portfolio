@@ -1,0 +1,223 @@
+/* Timeline of Stars CSS */
+.supernova-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+.supernova-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.supernova-header h2 {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  letter-spacing: 0.1em;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+}
+
+.timeline-cosmos {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+}
+
+/* Glowing Path */
+.cosmic-path-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.cosmic-path-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to bottom, #8A2BE2, #00E5FF);
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.8);
+  transform-origin: top;
+}
+
+/* Supernova Node */
+.supernova-node {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  z-index: 5;
+}
+
+.supernova-node.left {
+  justify-content: flex-end;
+  padding-right: 50%;
+}
+
+.supernova-node.right {
+  justify-content: flex-start;
+  padding-left: 50%;
+}
+
+/* The Star */
+.supernova-core {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  background: #000;
+  border-radius: 50%;
+  border: 4px solid #333;
+  transition: all 0.5s ease;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.supernova-node.active .supernova-core {
+  background: #fff;
+  border-color: #00E5FF;
+  box-shadow: 0 0 30px #00E5FF, 0 0 60px #8A2BE2;
+}
+
+.supernova-node.active .supernova-core::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #fff;
+  filter: blur(8px);
+  animation: starFlare 2s infinite alternate;
+}
+
+@keyframes starFlare {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.5); opacity: 0.4; }
+}
+
+/* Content Box */
+.supernova-content {
+  position: relative;
+  width: calc(100% - 60px);
+  max-width: 400px;
+  background: rgba(10, 10, 25, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.supernova-node.left .supernova-content {
+  margin-right: 40px;
+  text-align: right;
+}
+
+.supernova-node.right .supernova-content {
+  margin-left: 40px;
+  text-align: left;
+}
+
+.supernova-node.active .supernova-content {
+  border-color: rgba(0, 229, 255, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 229, 255, 0.05);
+}
+
+.supernova-content:hover {
+  transform: translateY(-5px);
+  border-color: rgba(138, 43, 226, 0.5);
+}
+
+/* Typography */
+.school-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.degree-name {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: #00E5FF;
+  margin-bottom: 15px;
+  letter-spacing: 0.05em;
+}
+
+.milestone-date {
+  position: absolute;
+  top: -15px;
+  background: #130B29;
+  border: 1px solid rgba(138, 43, 226, 0.5);
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
+}
+
+.supernova-node.left .milestone-date { right: 30px; }
+.supernova-node.right .milestone-date { left: 30px; }
+
+.milestone-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin-bottom: 15px;
+}
+
+.milestone-grade {
+  display: inline-block;
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #B088F9;
+  border: 1px solid rgba(138, 43, 226, 0.2);
+}
+
+@media (max-width: 768px) {
+  .cosmic-path-container {
+    left: 40px;
+  }
+  .supernova-node.left, .supernova-node.right {
+    justify-content: flex-start;
+    padding-left: 80px;
+    padding-right: 0;
+  }
+  .supernova-core {
+    left: 40px;
+  }
+  .supernova-node.left .supernova-content,
+  .supernova-node.right .supernova-content {
+    margin: 0;
+    text-align: left;
+    width: 100%;
+  }
+  .supernova-node.left .milestone-date {
+    right: auto;
+    left: 30px;
+  }
+}

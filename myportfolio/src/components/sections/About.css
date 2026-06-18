@@ -1,0 +1,152 @@
+/* Discovered Planet - Mission Log */
+.about-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 120px 0;
+}
+
+.planet-card-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+/* Energy Waves */
+.energy-waves {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.energy-wave {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(0, 229, 255, 0.4);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.2), inset 0 0 20px rgba(0, 229, 255, 0.2);
+  animation: pulseWave 6s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  opacity: 0;
+}
+
+.wave-1 { animation-delay: 0s; }
+.wave-2 { animation-delay: 2s; }
+.wave-3 { animation-delay: 4s; }
+
+@keyframes pulseWave {
+  0% { width: 400px; height: 400px; opacity: 0.8; border-width: 2px; }
+  100% { width: 1200px; height: 1200px; opacity: 0; border-width: 0px; }
+}
+
+/* Massive Planet Card */
+.planet-surface {
+  background: radial-gradient(circle at top left, #130B29, #04040A);
+  border-radius: 40px;
+  padding: 60px;
+  box-shadow: 
+    0 40px 100px rgba(0, 0, 0, 0.8),
+    inset 0 2px 20px rgba(138, 43, 226, 0.4),
+    inset 0 -2px 20px rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Engraved Text Effect */
+.engraved-text {
+  color: rgba(255, 255, 255, 0.6);
+  text-shadow: 
+    -1px -1px 1px rgba(255, 255, 255, 0.1),
+    1px 1px 1px rgba(0, 0, 0, 0.8),
+    inset 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+.planet-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.planet-header h2 {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  text-shadow: 1px 1px 2px black, -1px -1px 2px rgba(255,255,255,0.2);
+}
+
+.data-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.data-block {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: inset 2px 2px 5px rgba(0,0,0,0.8), inset -1px -1px 2px rgba(255,255,255,0.05);
+}
+
+.data-block.wide {
+  grid-column: span 2;
+}
+
+.data-title {
+  font-family: var(--font-mono);
+  color: var(--color-accent);
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.data-title::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--color-accent);
+}
+
+.data-text {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+}
+
+@media (max-width: 768px) {
+  .planet-surface {
+    padding: 30px;
+    border-radius: 24px;
+  }
+  .data-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .data-block.wide {
+    grid-column: span 1;
+  }
+  .planet-header h2 {
+    font-size: 2rem;
+  }
+}
