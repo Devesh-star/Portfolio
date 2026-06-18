@@ -1,25 +1,17 @@
 .custom-cursor-dot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
   border-radius: 50%;
-  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
+  /* Centering logic is now handled inline by Framer Motion */
 }
 
 .custom-cursor-trail {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   border: 1px solid rgba(0, 229, 255, 0.2);
-  pointer-events: none;
-  z-index: 9998;
+  /* Centering logic is handled inline */
 }
 
 .cursor-text {
