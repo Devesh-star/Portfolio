@@ -199,7 +199,7 @@ export const SkillsInfo = [
       image: aiDebugger,
       tags: ["Next.js", "TypeScript", "Node.js","Express.js","Python","Fast API","LongChain","ChromaDB","MongoDB","Docker","Github API","OpenAI API"],
       github: "https://github.com/Devesh-star/Ai-debugger",
-      webapp: "https://simon-game-teal-one.vercel.app/",
+      webapp: "https://ai-debugger-frontend-dceg.onrender.com",
     },
     {
       id: 1,
